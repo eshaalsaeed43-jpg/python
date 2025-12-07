@@ -1,0 +1,6 @@
+from gtts import gTTS
+
+def text_to_speech(text):
+    speech=gTTS(text=text,lang="en",slow=False)
+    speech.save("eshaal.png")
+text="hello, this is a text_to_speech(text)
