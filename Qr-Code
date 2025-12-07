@@ -1,0 +1,17 @@
+ import qrcode
+
+def generate_qr_code(data, filename):
+    """
+    Generate a QR code from the given data and save it to a file.
+    
+    Args:
+        data (str): The data to encode in the QR code.
+        filename (str): The filename to save the QR code to.
+    """
+    img = qrcode.make(data)
+    img.save(filename)
+
+# Example usage:
+data = "https://www.example.com"
+filename = "example_qr_code.png"
+generate_qr_code(data, filename)
