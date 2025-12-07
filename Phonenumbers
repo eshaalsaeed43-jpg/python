@@ -1,0 +1,11 @@
+import phonenumbers
+from phonenumbers import geocoder, carrier, timezone
+
+phone_numb=input("enter your phone number")
+parsed_numb=phonenumbers.parse(phone_numb)
+location=geocoder.description_for_number(parsed_numb,"en")
+print("my location is",location)
+service_provider=carrier.name_for_number(parsed_numb,"en")
+print("service provider is",service_provider)
+time_zone=timezone.time_zones_for_number(parsed_numb)
+print("time tone is",time_zone)
