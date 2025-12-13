@@ -1,0 +1,11 @@
+import speech_recognition as sr
+
+def voice_text():
+    a = sr.Recognizer()
+    with sr.Microphone()as source:
+        print("please say something")
+        audio= a.listen(source)
+        text= a.recognize_google(audio)
+        print("you said:",text)
+
+voice_text()
