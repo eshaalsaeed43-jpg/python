@@ -1,0 +1,17 @@
+import psutil
+import platform
+
+def system_info():
+    print("system information is")
+    print("system is",platform.system())
+    print("release is",platform.release())
+    print("version is",platform.version())
+    print("machine is",platform.machine())
+    print("processor is",platform.processor())
+    print("processor count is",psutil.cpu_count())
+    print("memory is",psutil.virtual_memory().total/(1024 * 1024 * 1024))
+    print("used memory is",psutil.virtual_memory().used/(1024 * 1024 * 1024))
+    print("available memory is",psutil.virtual_memory().available/(1024 * 1024 * 1024))
+
+
+system_info()
