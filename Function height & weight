@@ -1,0 +1,10 @@
+def summ(height,weight):
+    f=height+weight
+    print("addition of height and weight is",f)
+    h=height-weight
+    print("subtraction of height and weight is",h)
+    e=height*weight
+    print("multiplication of height and weight is",e)
+    d=height/weight
+    print("division of height and weight is",d)
+summ(6,7) 
