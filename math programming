@@ -1,0 +1,10 @@
+mport math 
+
+def math_use():
+    print("The power of is",math.pow(2,3))
+    print("The square root is",math.sqrt(16))
+    print("the sin of 30 is",math.sqrt(30))
+    print("the cos of 20 is",math.cos(20))
+    print("the tan of 50 is",math.tan(50))
+    print("the log of 20 is",math.log(20))
+math_use()
