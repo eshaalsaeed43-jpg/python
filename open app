@@ -1,0 +1,9 @@
+import os
+
+def open_app(app_name):
+    try:
+        os.system(f"open -a {app_name}")
+    except:
+        print("app not found")
+
+open_app("finder")
