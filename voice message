@@ -1,0 +1,36 @@
+import vosk
+import pyaudio
+import json
+
+# Path to your downloaded Vosk model (update this path)
+MODEL_PATH = "model/vosk-model-small-en-us-0.15"  # Adjust to your extracted model folder
+
+# Initialize the model
+model = vosk.Model(MODEL_PATH)
+
+# Set up microphone
+mic = pyaudio.PyAudio()
+stream = mic.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=8192)
+stream.start_stream()
+
+# Initialize recognizer
+recognizer = vosk.KaldiRecognizer(model, 16000)
+
+print("Listening... Speak into the microphone. Say 'stop' to end.")
+
+while True:
+    data = stream.read(4096, exception_on_overflow=False)
+    if recognizer.AcceptWaveform(data):
+        result = json.loads(recognizer.Result())
+        text = result.get("text", "")
+        print(f"You said: {text}")
+
+        # Optional: Stop on keyword
+        if "stop" in text.lower():
+            break
+
+# Clean up
+stream.stop_stream()
+stream.close()
+mic.terminate()
+print("Stopped listening.")
