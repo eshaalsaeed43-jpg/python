@@ -1,0 +1,18 @@
+import requests
+import webbrowser
+
+def location(ip_address):
+    response= requests.get(f"http://ip-api.com/json/{ip_address}")
+    data = response.json()
+    lat = data["lat"]
+    lon = data["lon"]
+    return lat , lon
+
+def google_map(lat,lon):
+    url = f"https://www.google.com/maps/search/?api=&query={lat},{lon}"
+    webbrowser.open(url)
+
+ip_address="2001:4860:7:162f::fb"
+location1= location(ip_address)
+lat,lon = location1
+google_map(lat,lon)
