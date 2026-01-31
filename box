@@ -1,0 +1,16 @@
+import tkinter as tk
+
+root = tk.Tk()
+root.geometry("350x400")
+icon=tk.PhotoImage(file="./boxing.png")
+root.iconphoto(False, icon)
+heading = tk.Label(root, text="this is box", font=("Arial",20),bg="sky blue",fg="blue")
+heading.pack()
+entry = tk.Entry(root, font=("Arial",40),fg="red",bg="pink")
+entry.pack()
+button = tk.Button(root, text="Click Me",font=("Arial",20,"bold"),fg="black",bg="white")
+button.pack()
+textbox= tk.Text(root,font=("Arial",20,"bold"),bg="blue",fg="white")
+textbox.pack()
+
+root.mainloop()
