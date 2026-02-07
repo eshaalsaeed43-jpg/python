@@ -1,0 +1,57 @@
+import tkinter as tk
+from tkinter import Tk
+import webbrowser
+
+root= tk.Tk()
+root.title("clothes")
+root.geometry("800x600")
+root.configure(bg="#333")
+
+#header
+header=tk.Frame(root,bg="#424242",height=50)
+header.pack()
+
+logo= tk.Label(header,text="clothes website",fg="#fff", bg="#424242",font=("Arial",18))
+logo.pack(side="left",padx=20,pady=30,anchor="w")
+
+#menu
+menu_frame= tk.Frame(header, bg="#424242")
+menu_frame.pack(side="right",padx=120,)
+
+def open1():
+    webbrowser.open(webbrowser.open_new_tab("https://www.google.com"))
+
+home_button= tk.Button(menu_frame,text="Home",fg="black",bg="#424242",borderwidth=0, highlightthickness=0,font=("Arial",12))
+home_button.pack(side="left",padx=10)
+about_button= tk.Button(menu_frame,text="About us",fg="black",bg="#424242",borderwidth=0, highlightthickness=0,font=("Arial",12))
+about_button.pack(side="left",padx=10)
+contact_button= tk.Button(menu_frame,text="Contact us",fg="black",bg="#424242",borderwidth=0, highlightthickness=0,font=("Arial",12))
+contact_button.pack(side="left",padx=10)
+services_button= tk.Button(menu_frame,text="Services",fg="black",bg="#424242",borderwidth=0, highlightthickness=0,font=("Arial",12))
+services_button.pack(side="left",padx=10)
+
+#content
+content= tk.Frame(root)
+content.pack(fill="both",expand="True")
+#title
+title=tk.Label(content,text="Welcome to clothing site",font=("Arial",24))
+title.pack(pady=20)
+
+#description
+description= tk.Label(content,text="we offer a wide of clothes for men and women")
+description.pack(pady=10)
+
+#image
+image_frame= tk.Frame(content)
+image_frame.pack(pady=20)
+image= tk.PhotoImage(file="hdfg (1).png")
+
+image1=image.subsample(3,3)
+imagine= tk.Label(image_frame,image=image1)
+imagine.pack()
+
+
+
+
+
+root.mainloop()
